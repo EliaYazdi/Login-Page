@@ -1,3 +1,5 @@
+
+// Defining the constant variables
 const username = "test";
 const password = "1234";
 
@@ -7,7 +9,7 @@ const button = document.getElementById ('button');
 
 
 
-//The happy paragraph
+//The happy paragraph makker function which is going to run when the login is successful
 function happyPMaker (){
 const happyP = document.createElement("p");
 const happyText = document.createTextNode("Welcome to the dark side!");
@@ -28,7 +30,7 @@ returnButton.addEventListener ("click", function(){
 
 }
 
-//The sad paragraph 
+//The sad paragraph maker function which is going to run when the login fails
 
 function sadPMaker (){
     const sadP = document.createElement("p");
@@ -48,12 +50,12 @@ function sadPMaker (){
 })
 }
 
-
+//The conditional function which executes either of the above functions based on the user input
 
 button.addEventListener('click', function (){
-    if (userInput.value == username && passInput.value == password){
+    if (userInput.value == username && passInput.value == password){ // checkes if the user inputs the correct values
         happyPMaker();   
-        document.getElementById("login").style.visibility ="hidden";
+        document.getElementById("login").style.visibility ="hidden"; // to take away the login div
             }
             else {
             sadPMaker();

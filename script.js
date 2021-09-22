@@ -24,7 +24,8 @@ returnButton.addEventListener ("click", function(){
     document.getElementById("login").style.visibility ="visible";
     happyP.style.visibility="hidden";
     returnButton.style.visibility="hidden";
-    localStorage.removeItem("userInput.value");
+    localStorage.removeItem("username", userInput.value);// removes the username from local storage
+    localStorage.removeItem("password", passInput.value);// removes the password from local storage
 })
 
 
@@ -54,8 +55,12 @@ function sadPMaker (){
 
 button.addEventListener('click', function (){
     if (userInput.value == username && passInput.value == password){ // checkes if the user inputs the correct values
+        localStorage.setItem("username", userInput.value);// adds the entered username to the local storage
+        localStorage.setItem("password", passInput.value);// adds the entered password to the local storage
+        
         happyPMaker();   
         document.getElementById("login").style.visibility ="hidden"; // to take away the login div
+        
             }
             else {
             sadPMaker();
